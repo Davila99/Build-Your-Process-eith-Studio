@@ -168,7 +168,7 @@
                         <OutArgument x:TypeArguments="x:Double">[ClientCode]</OutArgument>
                       </ui:ExcelReadCell.Result>
                     </ui:ExcelReadCell>
-                    <Sequence sap:VirtualizedContainerService.HintSize="512,1673" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                    <Sequence DisplayName="Secuencia para obtener valor de descuento y actualizar facturas" sap:VirtualizedContainerService.HintSize="512,1650" sap2010:WorkflowViewState.IdRef="Sequence_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -275,8 +275,8 @@
                                   </uix:TargetAnchorable>
                                 </uix:NGetText.Target>
                               </uix:NGetText>
-                              <ui:ExcelWriteCell Cell="E18" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="354,120" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Invoice" Text="[DiscountValue]" />
-                              <ui:ExcelWriteCell Cell="A31" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Invoice" Text="[Signature]" />
+                              <ui:ExcelWriteCell Cell="E18" DisplayName="Escriba la celda para insertar el valor de descuento" sap:VirtualizedContainerService.HintSize="354,120" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Invoice" Text="[DiscountValue]" />
+                              <ui:ExcelWriteCell Cell="A31" DisplayName="Escribir celda para descontar valor" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Invoice" Text="[Signature]" />
                             </Sequence>
                           </ActivityAction>
                         </uix:NApplicationCard.Body>
