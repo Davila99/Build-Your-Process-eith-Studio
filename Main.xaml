@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="670,1205" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="756,2714" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -44,6 +44,14 @@
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -110,9 +118,13 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Secuencia para guardar archivos adjuntos" sap:VirtualizedContainerService.HintSize="608,1140" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Secuencia para guardar archivos adjuntos" sap:VirtualizedContainerService.HintSize="766,2649" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="CourseEmails" />
     </Sequence.Variables>
@@ -121,28 +133,28 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="eliseo.davila.sa0z@est.uraccan.edu.ni" DisplayName="Obtener mensajes de correo de Outlook" Filter="[Subject]='Course Invoices'" GetAttachements="False" sap:VirtualizedContainerService.HintSize="546,57" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_2" MailFolder="Bandeja de entrada" MarkAsRead="True" Messages="[CourseEmails]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="30" />
-    <ui:LogMessage DisplayName="Log Retrieved Email Count" sap:VirtualizedContainerService.HintSize="546,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CourseEmails.Count.ToString + &quot; mensajes de correo han sido recuperados&quot;]" />
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each RetrievedEmail" sap:VirtualizedContainerService.HintSize="546,822" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[CourseEmails]">
+    <ui:GetOutlookMailMessages FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="eliseo.davila.sa0z@est.uraccan.edu.ni" DisplayName="Obtener mensajes de correo de Outlook" Filter="[Subject]='Course Invoices'" GetAttachements="False" sap:VirtualizedContainerService.HintSize="704,57" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_2" MailFolder="Bandeja de entrada" MarkAsRead="True" Messages="[CourseEmails]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="30" />
+    <ui:LogMessage DisplayName="Log Retrieved Email Count" sap:VirtualizedContainerService.HintSize="704,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[CourseEmails.Count.ToString + &quot; mensajes de correo han sido recuperados&quot;]" />
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each RetrievedEmail" sap:VirtualizedContainerService.HintSize="704,2331" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[CourseEmails]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="RetrievedEmail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="512,685" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="670,2194" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" ExcludeInlineAttachments="False" FolderPath="Invoices\" sap:VirtualizedContainerService.HintSize="450,120" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_2" Message="[RetrievedEmail]" OverwriteExisting="False" />
-            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope for each Invoice sheet" sap:VirtualizedContainerService.HintSize="450,477" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[&quot;Invoices\&quot;+ RetrievedEmail.Attachments.First.Name]">
+            <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" ExcludeInlineAttachments="False" FolderPath="Invoices\" sap:VirtualizedContainerService.HintSize="608,120" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_2" Message="[RetrievedEmail]" OverwriteExisting="False" />
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope for each Invoice sheet" sap:VirtualizedContainerService.HintSize="608,1986" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[&quot;Invoices\&quot;+ RetrievedEmail.Attachments.First.Name]">
               <ui:ExcelApplicationScope.Body>
                 <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Read the client code" sap:VirtualizedContainerService.HintSize="416,344" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <Sequence DisplayName="Read the client code" sap:VirtualizedContainerService.HintSize="574,1853" sap2010:WorkflowViewState.IdRef="Sequence_4">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Double" Name="ClientCode" />
                     </Sequence.Variables>
@@ -151,12 +163,128 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelReadCell Cell="E8" DisplayName="Read Cell store the client code" sap:VirtualizedContainerService.HintSize="354,92" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="Invoice">
+                    <ui:ExcelReadCell Cell="E8" DisplayName="Read Cell store the client code" sap:VirtualizedContainerService.HintSize="512,92" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="Invoice">
                       <ui:ExcelReadCell.Result>
                         <OutArgument x:TypeArguments="x:Double">[ClientCode]</OutArgument>
                       </ui:ExcelReadCell.Result>
                     </ui:ExcelReadCell>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Client Code&quot; + ClientCode.ToString +&quot;ha sido recuperado&quot;]" />
+                    <Sequence sap:VirtualizedContainerService.HintSize="512,1673" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: ACME System 1 - Dashboard" sap:VirtualizedContainerService.HintSize="450,1562" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="6a32df16-e6fd-47c4-8273-c1794efdbc47" Version="V2">
+                        <uix:NApplicationCard.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1248" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:String" Name="DiscountValue" />
+                                <Variable x:TypeArguments="x:String" Name="Signature">
+                                  <Variable.Default>
+                                    <Literal x:TypeArguments="x:String">RPA DevDeveloper@uipath.com</Literal>
+                                  </Variable.Default>
+                                </Variable>
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Part 2'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6a32df16-e6fd-47c4-8273-c1794efdbc47" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable CVScreenId="4228b64d-c92f-4c45-b2e8-030641489aff" CvTextArea="364, 336, 49, 13" CvTextArgument="PART 2" CvType="Text" DesignTimeRectangle="335, 326, 77, 27" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Part 2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Part 2' tag='A' type='' class='' check:text='Part 2' /&gt;" Guid="6b7734a1-f0e9-44a3-9c22-8b242efe0317" InformativeScreenshot="6ac3147a070e8752deb44dca847e040c.png" ScopeSelectorArgument="&lt;html app='brave.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.PointOffset>
+                                      <uix:PointOffset X="2" Y="-4" />
+                                    </uix:TargetAnchorable.PointOffset>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="Label 'Part 2'" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Target>
+                                      <uix:TargetAnchorable CVScreenId="6d52b855-30fc-451c-a5c8-c4056f42b067" CvTextArea="364, 284, 49, 13" CvTextArgument="PART 2" CvType="Text" DesignTimeRectangle="335, 274, 77, 27" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Part 2' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Part 2' tag='A' type='' class='' check:text='Part 2' /&gt;" Guid="79b68d55-92fe-4198-b999-026fd71f4f90" InformativeScreenshot="a7cdfc77a926d3a858df0109de374814.png" ScopeSelectorArgument="&lt;html app='brave.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                            <uix:Target CVScreenId="6d52b855-30fc-451c-a5c8-c4056f42b067" CvTextArea="225, 194, 473, 31" CvTextArgument="Welcome to First Automation!" CvType="Text" DesignTimeRectangle="228, 191, 1000, 40" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='' aaname='Welcome to First Automation!' check:text='Welcome to First Automation!' /&gt;" Guid="0c95b415-18ee-4fd9-aae5-b3b7c380aaa1" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:VerifyExecutionOptions.Target>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                              </uix:NClick>
+                              <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Insert the'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354,286" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="6a32df16-e6fd-47c4-8273-c1794efdbc47" Text="[ClientCode.ToString]" Version="V3">
+                                <uix:NTypeInto.Target>
+                                  <uix:TargetAnchorable CVScreenId="70337942-d952-43ea-84a1-61f253b8b5e6" CvElementArea="225, 425, 223, 46" CvType="InputBox" DesignTimeRectangle="228, 426, 178, 43" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='vendor' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='vendor' tag='INPUT' type='email' class='' placeholder='Type the client code' aaname='' /&gt;" Guid="6fc3bcd8-b231-4e28-a664-d3be163d9cc3" InformativeScreenshot="bdc6b28d4791f2d5a609dea6befc2f93.png" ScopeSelectorArgument="&lt;html app='brave.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="70337942-d952-43ea-84a1-61f253b8b5e6" CvTextArea="228, 388, 705, 22" CvTextArgument="Insert the client code to generate the discount value according to the promotion." CvType="Text" DesignTimeRectangle="228, 384, 1000, 28" ElementType="Text" FullSelectorArgument="&lt;webctrl class='instructions' parentid='second' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='instructions' parentid='second' tag='DIV' type='' aaname='                 Insert the client code to generate the discount value according to the promotion.             ' check:text='Insert the client code to generate the discount value according to the promotion.' /&gt;" Guid="9b9f88b3-0384-4614-a906-41601c152fd1" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NTypeInto.Target>
+                                <uix:NTypeInto.VerifyOptions>
+                                  <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionTypeIntoOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Retry>
+                                    <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                                  </uix:VerifyExecutionTypeIntoOptions>
+                                </uix:NTypeInto.VerifyOptions>
+                              </uix:NTypeInto>
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Insert the'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="6a32df16-e6fd-47c4-8273-c1794efdbc47" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="415, 435, 22, 24" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl parentid='submitButton' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='submitButton' tag='I' type='' class='fas fa-arrow-right' aaname='' /&gt;" Guid="7996bb8a-c811-46a3-af1e-7bfec63962f8" InformativeScreenshot="30cfdd9dd9b45e638038381ad9cbd0da.png" ScopeSelectorArgument="&lt;html app='brave.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="70337942-d952-43ea-84a1-61f253b8b5e6" CvTextArea="228, 388, 705, 22" CvTextArgument="Insert the client code to generate the discount value according to the promotion." CvType="Text" DesignTimeRectangle="228, 384, 1000, 28" ElementType="Text" FullSelectorArgument="&lt;webctrl class='instructions' parentid='second' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='instructions' parentid='second' tag='DIV' type='' aaname='                 Insert the client code to generate the discount value according to the promotion.             ' check:text='Insert the client code to generate the discount value according to the promotion.' /&gt;" Guid="b58dd6b7-39e6-41c6-a1e6-3bf57a901461" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                                <uix:NClick.VerifyOptions>
+                                  <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                    <uix:VerifyExecutionOptions.Retry>
+                                      <InArgument x:TypeArguments="x:Boolean" />
+                                    </uix:VerifyExecutionOptions.Retry>
+                                    <uix:VerifyExecutionOptions.Timeout>
+                                      <InArgument x:TypeArguments="x:Double" />
+                                    </uix:VerifyExecutionOptions.Timeout>
+                                  </uix:VerifyExecutionOptions>
+                                </uix:NClick.VerifyOptions>
+                              </uix:NClick>
+                              <uix:NGetText DisplayName="Get Text 'Discount'" sap:VirtualizedContainerService.HintSize="354,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="6a32df16-e6fd-47c4-8273-c1794efdbc47" TextString="[DiscountValue]" Version="V3">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable CVScreenId="51064555-af5e-4ed6-8b6f-a90bcc2f9946" CvTextArea="219, 555, 72, 31" CvType="AnyWordGroup" DesignTimeRectangle="220, 554, 399, 117" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='discount' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl id='discount' tag='H2' type='' class='discount no-discount' /&gt;" Guid="e01274ac-b28b-40cd-a256-f328192fb170" InformativeScreenshot="a70d1474b636f8000addc5c23d36a326.png" ScopeSelectorArgument="&lt;html app='brave.exe' title='ACME System 1 - Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                        <uix:Target CVScreenId="51064555-af5e-4ed6-8b6f-a90bcc2f9946" CvTextArea="219, 507, 105, 20" CvTextArgument="Discount" CvType="Text" DesignTimeRectangle="220, 505, 105, 29" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='product-card' tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='product-card' tag='H1' type='' class='' aaname='Discount' check:text='Discount' /&gt;" Guid="6f529fa7-c7ae-47eb-95ad-2a5f7f051dec" SearchSteps="FuzzySelector, CV" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <ui:ExcelWriteCell Cell="E18" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="354,120" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="Invoice" Text="[DiscountValue]" />
+                              <ui:ExcelWriteCell Cell="A31" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="Invoice" Text="[Signature]" />
+                            </Sequence>
+                          </ActivityAction>
+                        </uix:NApplicationCard.Body>
+                        <uix:NApplicationCard.TargetApp>
+                          <uix:TargetApp Area="-8, -8, 1456, 868" FilePath="C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUbSURBVFhHtZYNTJVVGMcPGn5kpokfZUn3XghBBT9BiyCERZJAWCHghpUFZJZLp9FWW7hmpM5ss80o1mTi3NAl4nRzLddarmVzuShrM81cLov8iEq+77//ued5ed9734sS6m97duH9eP7/85xznveo/oLsqJVIvdeP++8B5t0NJN8JzJkAzB4HzBgDTL8DSBoFTLsdmDy0SV67MSBnbB7So3uQGo2AgbkTgZS7jIFZY4GZUcZAojYwEpgywo+4oe/I6wMHQAQWjZ+OjOguPOgBK0ADk0IMsAJOA1O1gdtYheE0EbnCyhNI2B9QOMyL/DHHkTOpB5mxfmT6epDugzEgFdBTkKKnYLxMgRgITEGgAkDCrXoq/Igd4odvsB+eiHPwqSyRCQ+KlQeL1VkU0nQgBgE5FNAG0ry2gbnaACuQTANzrAqMdk4BED8cuG8I4IsAPMxlog1e9bDIBUPBcYzTtrjECxz5/lrgrTJgWRqQnwBUZAJNHwGdnawu+ewg8GyeMZk9jfcXAe9vBJYuAAWNuPXrUVcQq+aJrA2WqZEU/DtIfMkw4NQxIzIQLl/k1NGUXQFjJEalimwwLH99kIFPaiTTddDMAeipsKtwWuTc0EBzr/iGfJOguwvYx3JufpLT8ChQUwF8uRto+8fc13R3A0c+5f21ZirKCoD1a4ALLeb+trftCvhUJ+JVlEjaUDSxV7yUC+nSefOypqcHOH4I2FIMlHA0+pnqQrlJ6rbYAsXzgY93AFf+lZtEv58727kOKkTWhkmX9xrY9Li8GYbLvwNVFKldLRfIoT2mP/zYLBfC8OFm26RP7RBZG27Bmb0GnmODuXBO3gzD7nXAYY7S4uwpVi1b/gmD3i2LuYMsA14VaFBBACqCa6Cl18SqqUDrn5LBQUcb8DxH+/O3coH4/ewD/B6cPCEXHOj1sZzrxxYH4lS8yAZDAw29BnRUzuFctkomoXEDUHQL0CU9wKJgHisnC9dCG1u7LFjco34VOTcULQ8yoOONh8yoLfRC1P3hxBGWtsOInPweeCQReICd0sm6l53C1t91IucGRSrGZUBHTblkJF0U3fU6O2IkkMVKpNJMAp95sQho4QK12LPdFrXFdZSKXHgoeMZlYGupZHVw5ju2Wrbl+fwGHG6Siw7qtwULW7+T1USRCg8Fa10GvtorWUPY/wHL/LT8E4KuhmXAjh9Epm+4EEtcBo4dkKwOmj8HFvL0k8yv3c735KKDvy7Zwqb0OraKTN+gRE1wGXhlFtAuna3jCuf3Ta56dsRMroE0fnqn8JnVS4E/fjPPaNY84xy5iRhVIDJXJ+ibYEUlW2ntCvZ6ngHKeBZoqGZXZJ9o5w5prAMWJHF/c0Gu4nrR29EStebfo3owQ40WiatDwXddBnTo7bdvk6lCKHo7HmjgaYkHFqew9etTRyX9teF2zO3TwNFGUQyD/hak8gBjRhwa1ZL+2qBUjaBgu8tAILjo6itNi3Wyt57HMJ4DnaJ2+fXf6ZK+f1Bsp1vcEa9lmTXQxfPC+peChUPDp35ClRokqfsHpyGOQq0uYStyGUU8pj+VYnZBOGF7/p+QtP8PCmVyR1x0iVsGMhjJDN2KQ8VNdHPrrZR0AwNLlI8mvnAZWMiwDISrgFf9wtNvhqS5Pig4mPEqo6NfBrxqO8s+Sl6/cVBYnxu/CRhwToFlwKvO8/cxefzmgHIVySmpQh5Pt8EGdoU97d4skK+SkKkOIkV9TQMDHLVS/wGg1VvOXk7IJgAAAABJRU5ErkJggg==" InformativeScreenshot="145c9e7a4d71587db98917ea5919fc0f.png" Selector="&lt;html app='brave.exe' title='ACME System 1 - Dashboard' /&gt;" Title="ACME System 1 - Dashboard" />
+                        </uix:NApplicationCard.TargetApp>
+                      </uix:NApplicationCard>
+                    </Sequence>
                   </Sequence>
                 </ActivityAction>
               </ui:ExcelApplicationScope.Body>
